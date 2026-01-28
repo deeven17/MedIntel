@@ -7,14 +7,14 @@
       "config": { "distDir": "dist" }
     },
     {
-      "src": "backend/api/**/*.py",
+      "src": "backend/api/main.py",   // ← direct main.py ni point cheyyi (index.py delete chesina tarwata)
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/backend/api/$1"
+      "dest": "/backend/api/main.py"   // ← main.py ki route cheyyi
     },
     {
       "handle": "filesystem"
