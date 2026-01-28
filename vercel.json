@@ -25,5 +25,10 @@
       "src": "/.*",
       "dest": "/frontend/dist/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "backend/api/main.py": {
+      "runtime": "python@3.12"
+    }
+  }
 }
