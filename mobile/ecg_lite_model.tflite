@@ -1,0 +1,8 @@
+import tensorflow as tf
+
+# Load heart model
+model = tf.keras.models.load_model('heart_model.h5')  # Save from heart_model.py first
+converter = tf.lite.TFLiteConverter.from_keras_model(model)
+tflite_model = converter.convert()
+open("ecg_lite_model.tflite", "wb").write(tflite_model)
+# Integrate in Android app via TensorFlow Lite API for real-time ECG

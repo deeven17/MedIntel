@@ -1,0 +1,20 @@
+# Python virtual environment (venv ignore cheyyadaniki)
+venv/
+.venv/
+env/
+ENV/
+
+# Other common Python ignores (optional but good)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables (secure ga)
+.env
+
+# If frontend unte (optional)
+node_modules/
+.next/
+dist/
+build/
