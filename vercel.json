@@ -4,17 +4,19 @@
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+      "config": {
+        "distDir": "dist"
+      }
     },
     {
-      "src": "backend/api/main.py",   // ← direct main.py ni point cheyyi (index.py delete chesina tarwata)
+      "src": "backend/api/main.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/backend/api/main.py"   // ← main.py ki route cheyyi
+      "dest": "/backend/api/main.py"
     },
     {
       "handle": "filesystem"
