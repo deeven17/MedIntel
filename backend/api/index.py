@@ -1,8 +1,16 @@
 # backend/api/index.py
-# This file acts as the entry point for Vercel serverless functions
-# Import your main FastAPI app from the actual main.py
+import os
+import sys
 
-from main import app  # ← nee main.py lo unna 'app' ni import chestundi
+# Current folder (backend/api) ni sys.path ki add cheyyi
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# Vercel requires this exact name for Python functions
-# No need to run uvicorn here – Vercel handles it
+try:
+    from main import app
+    print("Successfully imported app from main.py")  # debug kosam
+except ImportError as e:
+    print(f"IMPORT ERROR: {str(e)}")
+    raise
+except Exception as e:
+    print(f"OTHER ERROR: {str(e)}")
+    raise
